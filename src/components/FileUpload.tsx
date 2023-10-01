@@ -6,8 +6,10 @@ import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const FileUpload = () => {
+  const router = useRouter();
   const [uploading, setUploading] = useState(false);
   const { mutate, isLoading } = useMutation({
     mutationFn: async ({
@@ -33,10 +35,10 @@ const FileUpload = () => {
     onDrop: async (acceptedFiles) => {
       const file = acceptedFiles[0];
 
-      // check if file is bigger than 10MB
-      if (file.size > 10 * 1024 * 1024) {
-        // bigger than 10MB
-        toast.error("Please upload a file smaller than 10MB");
+      // check if file is bigger than 4MB
+      if (file.size > 4 * 1024 * 1024) {
+        // bigger than 4MB
+        toast.error("Please upload a file smaller than 4MB");
         return;
       }
 
@@ -48,12 +50,13 @@ const FileUpload = () => {
           return;
         }
         mutate(data, {
-          onSuccess: (data) => {
-            toast.success(data.message);
-            console.log(data);
+          onSuccess: ({ chatId }) => {
+            toast.success("Chat created!");
+            router.push(`/chat/${chatId}`);
           },
           onError: (err) => {
             toast.error("Error creating chat");
+            console.error(err);
           },
         });
         console.log("data: ", data);
