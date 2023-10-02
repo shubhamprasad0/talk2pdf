@@ -4,7 +4,7 @@ import { getContext } from "@/lib/context";
 import { db } from "@/lib/db";
 import { chats, messages as _messages } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { Message } from "ai/react";
 
 export const runtime = "edge";
@@ -15,7 +15,7 @@ const config = new Configuration({
 
 const openai = new OpenAIApi(config);
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     const { messages, chatId } = await req.json();
     const _chats = await db.select().from(chats).where(eq(chats.id, chatId));
