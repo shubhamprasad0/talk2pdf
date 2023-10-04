@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Talk2PDF
 
-## Getting Started
+Talk2PDF is a unique project that allows users to interact with PDF documents through a chat interface. Whether you need to extract information from resumes, study materials, or any other PDF document, Talk2PDF leverages advanced technologies to make the process intuitive and efficient.
 
-First, run the development server:
+Visit the live project: [Talk2PDF](https://talk2pdf.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **PDF Chat**: Chat with your PDF documents just like you would with a person.
+- **Natural Language Interaction**: Ask questions, request information, or seek clarifications in plain English.
+- **Versatile Usage**: Ideal for extracting information from resumes, studying with PDF materials, and more.
+- **Backend Scalability**: Built on Next.js for both frontend and backend, ensuring scalability and responsiveness.
+- **Vector Database**: Utilizes Pinecone DB for efficient vector database management.
+- **Data Storage**: Uses PostgreSQL to securely store user data and chat history.
+- **Embeddings API**: Integrates with OpenAI's Embeddings API to generate vector embeddings.
+- **Text Chunking**: Employs Langchain to split PDFs into manageable chunks of text.
+- **Powered by ChatGPT**: Leverages OpenAI's ChatGPT API to enable interactive PDF conversations.
+- **Seamless Deployment**: Hosted on Vercel for a hassle-free deployment experience.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+1. **Upload a PDF**: Click the "Upload PDF" button to select and upload a PDF document.
+2. **Start Chatting**: Once the PDF is uploaded, you can start a conversation by typing your questions or requests in the chatbox.
+3. **Interact with the PDF**: Chat naturally, and the system will respond based on the content of the PDF.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+We hope you find Talk2PDF useful for your document interaction needs!
